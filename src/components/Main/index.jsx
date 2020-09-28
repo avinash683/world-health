@@ -4,57 +4,41 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import Zoom from '@material-ui/core/Zoom';
 import {Switch, Route, Redirect, Link} from 'react-router-dom';
 import Dashboard from "../Dashboard";
 import SubmitMessage from "../Dashboard/SubmitMessage";
-
+import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
+import green from "@material-ui/core/colors/green";
+import bg from "../../assets/back.jpg"
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    backgroundColor: theme.palette.background.paper,
+    position: 'relative',
   },
-  main: {
-    padding: theme.spacing(4)
-  }
+  fab: {
+    position: 'fixed',
+    bottom: theme.spacing(4),
+    right: theme.spacing(4),
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
+  },
+  fabGreen: {
+    color: theme.palette.common.white,
+    backgroundColor: green[500],
+    '&:hover': {
+      backgroundColor: green[600],
+    },
+  },
 }));
-
-function ScrollTop(props) {
-  const {children, window} = props;
-  const classes = useStyles();
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-    disableHysteresis: true,
-    threshold: 100,
-  });
-
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
-
-    if (anchor) {
-      anchor.scrollIntoView({behavior: 'smooth', block: 'center'});
-    }
-  };
-
-  return (
-    <Zoom in={trigger}>
-      <div onClick={handleClick} role="presentation" className={classes.root}>
-        {children}
-      </div>
-    </Zoom>
-  );
-}
 
 export default function Main(props) {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <CssBaseline/>
       <AppBar style={{backgroundColor : "#57af39"}}>
         <Toolbar>
@@ -69,11 +53,10 @@ export default function Main(props) {
             <Route path={`/thankyou`} component={SubmitMessage}/>
           </Switch>
       </Container>
-      <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon/>
+         <Fab className={`${classes.fab} ${classes.fabGreen}`} color="primary" variant="extended" size="large">
+           <ThumbUpAltOutlinedIcon className={classes.extendedIcon}/>
+           <Typography variant='subtitle1'>Click to <b>Pledge</b></Typography>
         </Fab>
-      </ScrollTop>
-    </React.Fragment>
+    </div>
   );
 }

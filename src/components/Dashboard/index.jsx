@@ -7,7 +7,22 @@ import fourthIcon from "../../assets/Icon 4.png";
 import Typography from "@material-ui/core/Typography";
 import mainLogo from '../../assets/Mental Health For All LOGO.png';
 import allLogo from '../../assets/Mental Health For All.png';
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import Fab from "@material-ui/core/Fab";
+import pledgeLogo from '../../assets/Click Pedge.png';
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(2),
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
+  },
+
+}));
 function Dashboard() {
+  const classes = useStyles();
   const information = [{
     logo: firstIcon,
     description: <Typography variant="h6">
@@ -33,6 +48,7 @@ function Dashboard() {
   }]
 
   return <div>
+    <br/><br/>
     <div style={{width: '100%'}}>
       {information.map((data, index) => {
         return <Box display="flex" p={1}>
@@ -56,8 +72,8 @@ function Dashboard() {
              <img className='mainLogo' src={allLogo} alt="all-logo"/>
        </Typography>
       </span>
-
     </div>
+    <br/><br/>
   </div>
 }
 

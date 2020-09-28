@@ -6,10 +6,10 @@ import Box from "@material-ui/core/Box";
 
 function SubmitMessage() {
   return <div>
-    <span className="App">
+      <span className="App">
         <br/>
         <br/>
-        <Typography variant="h4" >
+        <Typography variant="h4">
             <span className='bold-text'>Thankyou</span>
           </Typography>
         <br/>
@@ -30,8 +30,7 @@ function SubmitMessage() {
           </Typography>
          </Box>
        <Typography variant="subtitle1" align="right" gutterBottom>
-          <b> A public awarness initiative by</b> &nbsp;&nbsp;<img style={{width: "4.7vmin"}} src={logo}
-                                                                   alt="all-logo"/>
+          <b> A public awarness initiative by</b> &nbsp;&nbsp;<img style={{width: "4.7vmin"}} src={logo} alt="all-logo"/>
        </Typography>
       </span>
   </div>

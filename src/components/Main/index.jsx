@@ -11,7 +11,6 @@ import Dashboard from "../Dashboard";
 import SubmitMessage from "../Dashboard/SubmitMessage";
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import green from "@material-ui/core/colors/green";
-import bg from "../../assets/back.jpg"
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,

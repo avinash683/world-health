@@ -26,7 +26,11 @@
 
 .count{
   font-weight: bold!important;
-  font-size: 8rem!important;
+  font-size: 5rem!important;
   margin-right: 0.5rem!important;
   font-family: 'Abril Fatface'!important;
+}
+
+.back {
+  background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(225 245 227));
 }

@@ -10,20 +10,22 @@ import allLogo from '../../assets/Mental Health For All.png';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import axios from "axios";
 import SubmitMessage from "./SubmitMessage";
-const useStyles = makeStyles((theme) => ({
-}));
+import Slide from "react-reveal";
+
+const useStyles = makeStyles((theme) => ({}));
+
 function Dashboard({showPledge, setShowPledge}) {
-  console.log('showPledge - - - ',showPledge);
-  const [count , setCount] = useState(0);
-  useEffect(()=>{
+  console.log('showPledge - - - ', showPledge);
+  const [count, setCount] = useState(0);
+  useEffect(() => {
     axios.get('http://3.14.4.162:9000/api/user_count')
       .then(function (response) {
         console.log(JSON.stringify(response.data.userCount));
         setCount(response.data.userCount);
       }).catch(function (error) {
-        console.log(error);
-      })
-  },[showPledge]);
+      console.log(error);
+    })
+  }, [showPledge]);
 
   const information = [{
     logo: firstIcon,
@@ -55,14 +57,16 @@ function Dashboard({showPledge, setShowPledge}) {
         <br/><br/>
         <div style={{width: '100%'}}>
           {information.map((data, index) => {
-            return <Box display="flex" p={1}>
-              <Box p={1}>
-                <img src={data.logo} alt="logo" className='image-description'/>
+            return <Slide left cascade>
+               <Box display="flex" p={1}>
+                <Box p={1}>
+                  <img src={data.logo} alt="logo" className='image-description'/>
+                </Box>
+                <Box p={1} flexGrow={1} style={{margin: 'auto'}}>
+                  <Typography variant="h6">{data.description}</Typography>
+                </Box>
               </Box>
-              <Box p={1} flexGrow={1} style={{margin:'auto'}}>
-                <Typography variant="h6">{data.description}</Typography>
-              </Box>
-            </Box>
+            </Slide>
           })}
           <br/>
           <span className="App">
@@ -79,7 +83,7 @@ function Dashboard({showPledge, setShowPledge}) {
         </div>
         <br/><br/>
       </div>
-    : <SubmitMessage count={count}/>}
+      : <SubmitMessage count={count}/>}
   </>
 }
 

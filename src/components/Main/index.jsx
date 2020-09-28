@@ -6,7 +6,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
-import {Switch, Route, Redirect, Link} from 'react-router-dom';
+import {Switch, Route, Redirect, useHistory} from 'react-router-dom';
 import Dashboard from "../Dashboard";
 import SubmitMessage from "../Dashboard/SubmitMessage";
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     position: 'relative',
+    height:'100vh'
   },
   fab: {
     position: 'fixed',
@@ -35,7 +36,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Main(props) {
   const classes = useStyles();
-
+  const history = useHistory();
+  const pledge = () => {
+      history.push('/thankyou')
+  }
   return (
     <div className={classes.root}>
       <CssBaseline/>
@@ -52,7 +56,7 @@ export default function Main(props) {
             <Route path={`/thankyou`} component={SubmitMessage}/>
           </Switch>
       </Container>
-         <Fab className={`${classes.fab} ${classes.fabGreen}`} color="primary" variant="extended" size="large">
+         <Fab className={`${classes.fab} ${classes.fabGreen}`} color="primary" variant="extended" size="large" onClick={pledge}>
            <ThumbUpAltOutlinedIcon className={classes.extendedIcon}/>
            <Typography variant='subtitle1'>Click to <b>Pledge</b></Typography>
         </Fab>

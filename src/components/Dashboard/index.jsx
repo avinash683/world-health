@@ -8,21 +8,9 @@ import Typography from "@material-ui/core/Typography";
 import mainLogo from '../../assets/Mental Health For All LOGO.png';
 import allLogo from '../../assets/Mental Health For All.png';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import Fab from "@material-ui/core/Fab";
-import pledgeLogo from '../../assets/Click Pedge.png';
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-
 const useStyles = makeStyles((theme) => ({
-  margin: {
-    margin: theme.spacing(2),
-  },
-  extendedIcon: {
-    marginRight: theme.spacing(1),
-  },
-
 }));
 function Dashboard() {
-  const classes = useStyles();
   const information = [{
     logo: firstIcon,
     description: <Typography variant="h6">
@@ -65,7 +53,7 @@ function Dashboard() {
         <Typography variant="h6">On this occasion of</Typography>
         <br/>
         <Typography variant="h6">
-                   <img className='mainLogo' src={mainLogo} alt="main-logo"/>
+          <img className='mainLogo' src={mainLogo} alt="main-logo"/>
         </Typography>
         <br/>
        <Typography variant="h6">

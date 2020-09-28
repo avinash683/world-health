@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     position: 'relative',
-    height:'100vh'
   },
   fab: {
     position: 'fixed',
@@ -36,10 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Main(props) {
   const classes = useStyles();
-  const history = useHistory();
-  const pledge = () => {
-      history.push('/thankyou')
-  }
+  const [showPledge, setShowPledge] = useState(false);
   return (
     <div className={classes.root}>
       <CssBaseline/>
@@ -51,15 +47,16 @@ export default function Main(props) {
       <Toolbar id="back-to-top-anchor"/>
       <Container maxWidth="md" className={classes.main}>
          <Switch>
-            <Redirect exact from='/' to='/dashboard'/>
-            <Route path={`/dashboard`} component={Dashboard}/>
-            <Route path={`/thankyou`} component={SubmitMessage}/>
-          </Switch>
+           <Redirect exact from='/' to='/main'/>
+           <Route path={`/main`} component={()=><Dashboard showPledge={showPledge} setShowPledge={setShowPledge}/>}/>
+         </Switch>
       </Container>
-         <Fab className={`${classes.fab} ${classes.fabGreen}`} color="primary" variant="extended" size="large" onClick={pledge}>
-           <ThumbUpAltOutlinedIcon className={classes.extendedIcon}/>
-           <Typography variant='subtitle1'>Click to <b>Pledge</b></Typography>
-        </Fab>
+      {!showPledge &&
+      <Fab className={`${classes.fab} ${classes.fabGreen}`} color="primary" variant="extended" size="large" onClick={()=>setShowPledge(true)}>
+        <ThumbUpAltOutlinedIcon className={classes.extendedIcon}/>
+        <Typography variant='subtitle1'>Click to <b>Pledge</b></Typography>
+      </Fab>}
+
     </div>
   );
 }

@@ -1,10 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import thankyouLogo from '../../assets/Image Page 2.png';
 import logo from '../../assets/Sun Pharma Logo.png';
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-
-function SubmitMessage() {
+function SubmitMessage({count}) {
   return <div>
       <span className="App">
         <br/>
@@ -13,6 +12,7 @@ function SubmitMessage() {
             <span className='bold-text'>Thankyou</span>
           </Typography>
         <br/>
+        <Typography className="count">{count}</Typography>
         <br/>
         <Typography variant="h6">
           <img className="mainLogo" src={thankyouLogo} alt="main-logo"/>

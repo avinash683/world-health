@@ -1,15 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {SnackbarProvider} from "notistack";
+import Button from "@material-ui/core/Button";
+import Main from "./components/Main";
 
 function App() {
+  const snackbarRef = React.createRef();
+
+  const onClickDismiss = (key) => () => {
+    snackbarRef.current.closeSnackbar(key);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Mental health for everyone
-        </p>
-      </header>
+    <div>
+      <SnackbarProvider
+        maxSnack={3}
+        ref={snackbarRef}
+        action={(key) => (
+          <Button
+            size='small'
+            style={{color: '#fff'}}
+            onClick={onClickDismiss(key)}
+          >
+            Dismiss
+          </Button>
+        )}
+        anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+      >
+        <Main/>
+      </SnackbarProvider>
     </div>
   );
 }

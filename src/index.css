@@ -1,13 +1,27 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Open Sans', sans-serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Open Sans', sans-serif!important;
 }
+.MuiMenuItem-root,
+.MuiListSubheader-root,
+.MuiButton-root,
+.MuiTab-root,
+.MuiTypography-root,
+.MuiInputBase-root,
+.MuiFormLabel-root,
+.MuiBottomNavigationAction-root,
+.MuiBottomNavigationAction-label,
+.SnackbarItem-base-543,
+.MuiTableCell-root {
+  font-family: 'Open Sans', sans-serif!important;
+  transition: background-color 0.15s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

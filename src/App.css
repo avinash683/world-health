@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.image-description {
+  width: 6rem;
+  height: 6rem;
+}
+
+.bold-text {
+  color: #57af39;
+  font-weight: bolder;
+  font-size: 25px;
+}

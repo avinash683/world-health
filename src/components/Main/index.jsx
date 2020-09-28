@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     bottom: theme.spacing(2),
     right: theme.spacing(2),
   },
+  main: {
+    padding: theme.spacing(4)
+  }
 }));
 
 function ScrollTop(props) {
@@ -48,16 +51,18 @@ function ScrollTop(props) {
 }
 
 export default function Main(props) {
+  const classes = useStyles();
+
   return (
     <React.Fragment>
       <CssBaseline/>
-      <AppBar>
+      <AppBar style={{backgroundColor : "#57af39"}}>
         <Toolbar>
           <Typography variant="h6">Mental health for everyone</Typography>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor"/>
-      <Container>
+      <Container className={classes.main}>
          <Switch>
             <Redirect exact from='/' to='/dashboard'/>
             <Route path={`/dashboard`} component={Dashboard}/>

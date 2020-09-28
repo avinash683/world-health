@@ -62,7 +62,7 @@ export default function Main(props) {
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor"/>
-      <Container className={classes.main}>
+      <Container maxWidth="md" className={classes.main}>
          <Switch>
             <Redirect exact from='/' to='/dashboard'/>
             <Route path={`/dashboard`} component={Dashboard}/>

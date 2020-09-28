@@ -1,12 +1,12 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 import firstIcon from "../../assets/Icon 1.png";
 import secondIcon from "../../assets/Icon 2.png";
 import thirdIcon from "../../assets/Icon 3.png";
 import fourthIcon from "../../assets/Icon 4.png";
 import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-
+import mainLogo from '../../assets/Mental Health For All LOGO.png';
+import allLogo from '../../assets/Mental Health For All.png';
 function Dashboard() {
   const information = [{
     logo: firstIcon,
@@ -44,6 +44,19 @@ function Dashboard() {
           </Box>
         </Box>
       })}
+      <br/>
+      <span className="App">
+        <Typography variant="h6">On this occasion of</Typography>
+        <br/>
+        <Typography variant="h6">
+                   <img className='mainLogo' src={mainLogo} alt="main-logo"/>
+        </Typography>
+        <br/>
+       <Typography variant="h6">
+             <img className='mainLogo' src={allLogo} alt="all-logo"/>
+       </Typography>
+      </span>
+
     </div>
   </div>
 }

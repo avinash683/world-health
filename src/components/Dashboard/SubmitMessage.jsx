@@ -29,8 +29,8 @@ function SubmitMessage({count}) {
             <Typography variant="h5">
               I am taking the <b className='bold-text'>pledge</b> to have
           </Typography>
-            <Typography variant="h4">
-              Mental Health for All
+            <Typography variant="h4" style={{color:' #57af39'}}>
+              <b>Mental Health for All</b>
           </Typography>
          </Box>
        <Typography variant="subtitle1" align="right" gutterBottom>

@@ -16,7 +16,7 @@
 .bold-text {
   color: #57af39;
   font-weight: bolder;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .mainLogo {
@@ -43,5 +43,9 @@
 #example1 {
   background: url(assets/Background.png);
   background-repeat: no-repeat;
-  background-size:100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
 }

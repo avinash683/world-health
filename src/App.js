@@ -13,7 +13,7 @@ function App() {
     snackbarRef.current.closeSnackbar(key);
   };
   return (
-    <div style={{overflowX:''}}>
+    <div>
       <SnackbarProvider
         maxSnack={3}
         ref={snackbarRef}

@@ -45,7 +45,7 @@ export default function Main(props) {
   return (
     <div className={classes.root} >
       {/*<CssBaseline/>*/}
-      <Container id="example1" maxWidth="md" className={`${classes.root}`}>
+      <Container maxWidth="md" className={`${classes.root}`} id="example1">
          <Switch>
            <Route path={`/`} component={()=><Dashboard/>}/>
          </Switch>

@@ -20,7 +20,7 @@
 }
 
 .mainLogo {
-  width: 50%;
+  width: 70%;
   pointer-events: none;
 }
 
@@ -33,4 +33,10 @@
 
 .back {
   background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(225 245 227));
+}
+
+#example1 {
+  background: url(assets/Background.png);
+  background-repeat: no-repeat;
+  background-size:100% 100%;
 }

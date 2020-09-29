@@ -11,10 +11,11 @@ import Dashboard from "../Dashboard";
 import SubmitMessage from "../Dashboard/SubmitMessage";
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import green from "@material-ui/core/colors/green";
+import bg from "../../assets/Background.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    position: 'relative',
+    height:"100%"
   },
   fab: {
     position: 'fixed',
@@ -35,28 +36,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Main(props) {
   const classes = useStyles();
-  const [showPledge, setShowPledge] = useState(false);
   return (
-    <div className={classes.root}>
+    <div className={classes.root} >
       <CssBaseline/>
-     {/* <AppBar style={{backgroundColor : "#57af39"}}>
-        <Toolbar>
-          <Typography variant="h6">Mental health for everyone</Typography>
-        </Toolbar>
-      </AppBar>
-      <Toolbar id="back-to-top-anchor"/>
-      */}
-      <Container maxWidth="md" className={`back ${classes.main}`}>
+      <Container id="example1" maxWidth="md" className={`${classes.root}`}>
          <Switch>
-           <Redirect exact from='/' to='/main'/>
-           <Route path={`/main`} component={()=><Dashboard showPledge={showPledge} setShowPledge={setShowPledge}/>}/>
+           <Route path={`/`} component={()=><Dashboard/>}/>
          </Switch>
       </Container>
-      {!showPledge &&
-      <Fab className={`${classes.fab} ${classes.fabGreen}`} color="primary" variant="extended" size="large" onClick={()=>setShowPledge(true)}>
-        <ThumbUpAltOutlinedIcon className={classes.extendedIcon}/>
-        <Typography style={{fontSize:"1.5rem"}} variant='subtitle1'>Click to <b>Pledge</b></Typography>
-      </Fab>}
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Box from "@material-ui/core/Box";
 import thanks from '../../assets/thankyou.svg';
 import Jump from 'react-reveal/Jump';
 function SubmitMessage({count}) {
-  return <div>
+  return <div style={{height:"100vh"}}>
       <span className="App">
         <br/>
         <br/>

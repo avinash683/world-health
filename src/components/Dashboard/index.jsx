@@ -34,18 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Dashboard(props) {
   const [showPledge, setShowPledge] = useState(false);
-  const [count, setCount] = useState(0);
   const classes = useStyles();
-  useEffect(() => {
-    axios.get('http://3.129.137.121:9000/api/user_count')
-      .then(function (response) {
-        console.log(JSON.stringify(response.data.userCount));
-        setCount(response.data.userCount);
-      }).catch(function (error) {
-      console.log(error);
-    })
-  }, [showPledge]);
-
   const information = [{
     logo: firstIcon,
     description: <Typography variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
@@ -108,7 +97,7 @@ function Dashboard(props) {
           </Typography>
         </div>
       </div>
-      : <SubmitMessage count={count}/>}
+      : <SubmitMessage/>}
   </>
 }
 

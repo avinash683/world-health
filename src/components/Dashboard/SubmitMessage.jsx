@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import thankyouLogo from '../../assets/Image Page 2.png';
 import logo from '../../assets/Sun Pharma Logo.png';
 import Typography from "@material-ui/core/Typography";
@@ -6,10 +6,20 @@ import Box from "@material-ui/core/Box";
 import Jump from 'react-reveal/Jump';
 import {isWidthDown} from "@material-ui/core";
 import withWidth from "@material-ui/core/withWidth";
+import axios from "axios";
 function SubmitMessage(props) {
-  const {
-    count
-  } = props
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    axios.get('http://3.129.137.121:9000/api/user_count')
+      .then(function (response) {
+        console.log(JSON.stringify(response.data.userCount));
+        setCount(response.data.userCount);
+      }).catch(function (error) {
+      console.log(error);
+    })
+  }, []);
+
   return <div style={{height:"100vh"}}>
       <span className="App">
         <br/>

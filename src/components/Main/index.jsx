@@ -1,21 +1,19 @@
 import React, {useState} from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import Fab from '@material-ui/core/Fab';
 import {Switch, Route, Redirect, useHistory} from 'react-router-dom';
 import Dashboard from "../Dashboard";
-import SubmitMessage from "../Dashboard/SubmitMessage";
-import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import green from "@material-ui/core/colors/green";
-import bg from "../../assets/Background.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    height:"100%"
+    [theme.breakpoints.up('sm')]: {
+      height:"100%"
+    },
+    [theme.breakpoints.down('sm')]: {
+      height:"100vh"
+    },
   },
   fab: {
     position: 'fixed',

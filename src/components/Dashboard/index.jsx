@@ -57,7 +57,7 @@ function Dashboard() {
 
   return <>
     {!showPledge ?
-      <div >
+      <div>
         <br/><br/>
         <div style={{width: '100%'}}>
           {information.map((data, index) => {

@@ -8,12 +8,7 @@ import green from "@material-ui/core/colors/green";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    [theme.breakpoints.up('sm')]: {
-      height:"100%"
-    },
-    [theme.breakpoints.down('sm')]: {
-      height:"100vh"
-    },
+    height:"100%"
   },
   fab: {
     position: 'fixed',

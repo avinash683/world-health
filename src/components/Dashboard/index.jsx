@@ -58,8 +58,8 @@ function Dashboard() {
   return <>
     {!showPledge ?
       <div>
-        <br/><br/>
-        <div style={{width: '100%'}}>
+        <br/>
+        <div>
           {information.map((data, index) => {
             return <Slide left cascade>
                <Box display="flex" p={1}>
@@ -72,7 +72,6 @@ function Dashboard() {
               </Box>
             </Slide>
           })}
-          <br/>
           <Container maxWidth="sm">
               <Typography variant="h6"><b>On this occasion of</b></Typography>
               <br/>
@@ -86,7 +85,7 @@ function Dashboard() {
              <br/>
 
             {!showPledge &&
-            <Typography variant="h6" align="left" onClick={() => setShowPledge(true)}>
+            <Typography style={{cursor:"pointer"}} variant="h6" align="left" onClick={() => setShowPledge(true)}>
               <img style={{width:"60%"}} src={clickLogo} alt="all-logo"/>
             </Typography>
             }

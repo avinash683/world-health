@@ -3,10 +3,12 @@ import './App.css';
 import {SnackbarProvider} from "notistack";
 import Button from "@material-ui/core/Button";
 import Main from "./components/Main";
+import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 
 function App() {
   const snackbarRef = React.createRef();
-
+  let theme = createMuiTheme();
+  theme = responsiveFontSizes(theme);
   const onClickDismiss = (key) => () => {
     snackbarRef.current.closeSnackbar(key);
   };
@@ -26,7 +28,9 @@ function App() {
         )}
         anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
       >
-        <Main/>
+        <ThemeProvider theme={theme}>
+          <Main/>
+        </ThemeProvider>
       </SnackbarProvider>
     </div>
   );

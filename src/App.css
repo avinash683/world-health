@@ -9,8 +9,8 @@
 
 
 .image-description {
-  width: 6rem;
-  height: 6rem;
+  width: 4.2rem;
+  height: 4.2rem;
 }
 
 .bold-text {
@@ -29,6 +29,11 @@
   font-size: 5rem!important;
   margin-right: 0.5rem!important;
   font-family: 'Abril Fatface'!important;
+  color: #ef7f1c;
+}
+
+.colorFont {
+  color: #57af39;
 }
 
 .back {

@@ -8,7 +8,12 @@ import green from "@material-ui/core/colors/green";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    height:"100%"
+    [theme.breakpoints.up('sm')]: {
+      height: "100vh"
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: "100%"
+    },
   },
   fab: {
     position: 'fixed',
@@ -25,13 +30,21 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: green[600],
     },
   },
+  mainLogo : {
+    [theme.breakpoints.up('sm')]: {
+      width:"70%"
+    },
+    [theme.breakpoints.down('sm')]: {
+      width:"50%"
+    },
+  }
 }));
 
 export default function Main(props) {
   const classes = useStyles();
   return (
     <div className={classes.root} >
-      <CssBaseline/>
+      {/*<CssBaseline/>*/}
       <Container id="example1" maxWidth="md" className={`${classes.root}`}>
          <Switch>
            <Route path={`/`} component={()=><Dashboard/>}/>

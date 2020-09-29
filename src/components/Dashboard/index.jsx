@@ -15,11 +15,27 @@ import clickLogo from "../../assets/Click Pedge.png";
 import Container from "@material-ui/core/Container";
 import Fab from "@material-ui/core/Fab";
 import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
+import withWidth from '@material-ui/core/withWidth';
 import logo from "../../assets/Sun Pharma Logo.png";
-const useStyles = makeStyles((theme) => ({}));
-function Dashboard() {
+import {isWidthDown, isWidthUp} from "@material-ui/core";
+import green from "@material-ui/core/colors/green";
+
+const useStyles = makeStyles((theme) => ({
+  mainLogo : {
+    [theme.breakpoints.up('sm')]: {
+      width:"70%"
+    },
+    [theme.breakpoints.down('sm')]: {
+      width:"50%"
+    },
+  }
+}));
+
+
+function Dashboard(props) {
   const [showPledge, setShowPledge] = useState(false);
   const [count, setCount] = useState(0);
+  const classes = useStyles();
   useEffect(() => {
     axios.get('http://3.129.137.121:9000/api/user_count')
       .then(function (response) {
@@ -28,28 +44,28 @@ function Dashboard() {
       }).catch(function (error) {
       console.log(error);
     })
-  }, [setShowPledge]);
+  }, [showPledge]);
 
   const information = [{
     logo: firstIcon,
-    description: <Typography variant="h6">
+    description: <Typography variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
       <b><span className='bold-text'>1 in 4</span> suffers from mental illness accross the globe today
       </b>
     </Typography>
   }, {
     logo: secondIcon,
-    description: <Typography variant="h6">
+    description: <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
       <b>Due to mental illness every <span className='bold-text'>40 seconds</span> a person suicides</b>
     </Typography>
   }, {
     logo: thirdIcon,
-    description: <Typography variant="h6">
+    description: <Typography variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
       <b><span className='bold-text'>COVID-19</span> pandemic has a further impact on people's mental health</b>
     </Typography>
   }, {
     logo: fourthIcon,
     description:
-      <Typography variant="h6">
+      <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
         <b><span className='bold-text'>75%</span> of people with mental, neurological and substance use disorders receive
           no treatment for their condition at all</b>
       </Typography>
@@ -67,31 +83,28 @@ function Dashboard() {
                   <img src={data.logo} alt="logo" className='image-description'/>
                 </Box>
                 <Box p={1} flexGrow={1} style={{margin: 'auto'}}>
-                  <Typography variant="h6">{data.description}</Typography>
+                  <Typography>{data.description}</Typography>
                 </Box>
               </Box>
             </Slide>
           })}
           <Container maxWidth="sm">
-              <Typography variant="h6"><b>On this occasion of</b></Typography>
-              <br/>
-              <Typography variant="h6" align="center">
-                <img className='mainLogo' src={mainLogo} alt="main-logo"/>
+              <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}><b>On this occasion of</b></Typography>
+              <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'} align="center">
+                <img className={classes.mainLogo} src={mainLogo} alt="main-logo"/>
               </Typography>
-              <br/>
              <Typography variant="h6">
-                   <img className='mainLogo' src={allLogo} alt="all-logo"/>
+                 <img className={classes.mainLogo} src={allLogo} alt="all-logo"/>
              </Typography>
              <br/>
-
             {!showPledge &&
             <Typography style={{cursor:"pointer"}} variant="h6" align="left" onClick={() => setShowPledge(true)}>
-              <img style={{width:"60%"}} src={clickLogo} alt="all-logo"/>
+              <img className={classes.mainLogo} src={clickLogo} alt="all-logo"/>
             </Typography>
             }
           </Container>
-          <Typography variant="subtitle1" align="right" gutterBottom style={{cursor : "pointer"}}>
-            <b> A public awarness initiative by</b> &nbsp;&nbsp;<img style={{width: "4.7vmin"}} src={logo} alt="all-logo"/>
+          <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'subtitle1'} align="right" gutterBottom style={{cursor : "pointer"}}>
+            <b> A public awarness initiative by</b> &nbsp;&nbsp;<img style={{width: "5vmin"}} src={logo} alt="all-logo"/>
           </Typography>
         </div>
       </div>
@@ -99,5 +112,5 @@ function Dashboard() {
   </>
 }
 
+export default withWidth()(Dashboard);
 
-export default Dashboard

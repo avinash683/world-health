@@ -4,7 +4,12 @@ import logo from '../../assets/Sun Pharma Logo.png';
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Jump from 'react-reveal/Jump';
-function SubmitMessage({count}) {
+import {isWidthDown} from "@material-ui/core";
+import withWidth from "@material-ui/core/withWidth";
+function SubmitMessage(props) {
+  const {
+    count
+  } = props
   return <div style={{height:"100vh"}}>
       <span className="App">
         <br/>
@@ -12,7 +17,7 @@ function SubmitMessage({count}) {
         <Box p={1} >
            <Typography className="count colorCount">{count}</Typography>
         </Box>
-        <Box p={1} style={{margin: "inherit"}}>
+        <Box p={1} style={{margin: isWidthDown('xs', props.width) ? 'auto' : 'inherit'}}>
             <Typography variant="h3" align="left">
               <b className="colorFont">Pledges</b>
           </Typography>
@@ -21,8 +26,6 @@ function SubmitMessage({count}) {
           </Typography>
         </Box>
       </Box>
-
-
         <br/>
        { <Typography variant="h6">
           <img style={{width : "50%"}} src={thankyouLogo} alt="main-logo"/>
@@ -46,5 +49,4 @@ function SubmitMessage({count}) {
   </div>
 }
 
-
-export default SubmitMessage
+export default withWidth()(SubmitMessage);

@@ -21,7 +21,7 @@ function Dashboard() {
   const [showPledge, setShowPledge] = useState(false);
   const [count, setCount] = useState(0);
   useEffect(() => {
-    axios.get('http://3.14.4.162:9000/api/user_count')
+    axios.get('http://3.129.137.121:9000/api/user_count')
       .then(function (response) {
         console.log(JSON.stringify(response.data.userCount));
         setCount(response.data.userCount);

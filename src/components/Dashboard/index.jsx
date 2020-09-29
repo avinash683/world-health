@@ -28,7 +28,7 @@ function Dashboard() {
       }).catch(function (error) {
       console.log(error);
     })
-  }, [showPledge]);
+  }, [setShowPledge]);
 
   const information = [{
     logo: firstIcon,

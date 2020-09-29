@@ -6,7 +6,7 @@ import Box from "@material-ui/core/Box";
 import thanks from '../../assets/thankyou.svg';
 import Jump from 'react-reveal/Jump';
 function SubmitMessage({count}) {
-  return <div style={{height:"100vh"}}>
+  return <div style={{height:"100%"}}>
       <span className="App">
         <br/>
         <br/>
@@ -18,16 +18,16 @@ function SubmitMessage({count}) {
            <Typography className="count">{count}</Typography>
          </Jump>
         <br/>
-       {/* <Typography variant="h6">
+       { <Typography variant="h6">
           <img className="mainLogo" src={thankyouLogo} alt="main-logo"/>
-        </Typography>*/}
+        </Typography>}
         <br/>
          <Box display="grid" justifyContent="center" m={1} p={1}>
            <Typography variant="h5">
-              For joining us
+              <b className='bold-text'>Thank you,</b> For joining us
           </Typography>
             <Typography variant="h5">
-              I am taking the <b className='bold-text'>pledge</b> to have
+              in taking the <b className='bold-text'>pledge</b> to have
           </Typography>
             <Typography variant="h4" style={{color:' #57af39'}}>
               <b>Mental Health for All</b>

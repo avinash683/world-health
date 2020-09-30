@@ -20,8 +20,7 @@ function SubmitMessage(props) {
     })
   }, []);
 
-  return <div style={{height:"100vh"}}>
-      <span className="App">
+  return <div className="App">
         <br/>
         <Box display="flex" justifyContent="center" m={1} p={1}>
         <Box p={1} >
@@ -37,9 +36,9 @@ function SubmitMessage(props) {
         </Box>
       </Box>
         <br/>
-       { <Typography variant="h6">
+      <Typography variant="h6">
           <img style={{width : "50%"}} src={thankyouLogo} alt="main-logo"/>
-        </Typography>}
+        </Typography>
         <br/>
          <Box display="grid" justifyContent="center" m={1} p={1}>
            <Typography variant="h5">
@@ -52,10 +51,6 @@ function SubmitMessage(props) {
               <b>Mental Health for All</b>
           </Typography>
          </Box>
-       <Typography variant="subtitle1" align="right" gutterBottom>
-          <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "5vmin"}} src={logo} alt="all-logo"/>
-       </Typography>
-      </span>
   </div>
 }
 

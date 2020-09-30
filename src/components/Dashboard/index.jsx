@@ -88,9 +88,6 @@ function Dashboard(props) {
             </Typography>
             }
           </Container>
-          <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'subtitle1'} align="right" gutterBottom style={{cursor : "pointer"}}>
-            <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "5vmin"}} src={logo} alt="all-logo"/>
-          </Typography>
         </div>
       </div>
       : <SubmitMessage/>}

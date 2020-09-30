@@ -4,6 +4,10 @@ import Container from '@material-ui/core/Container';
 import {Switch, Route, Redirect, useHistory} from 'react-router-dom';
 import Dashboard from "../Dashboard";
 import green from "@material-ui/core/colors/green";
+import Typography from "@material-ui/core/Typography";
+import logo from "../../assets/Sun Pharma Logo.png";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -48,6 +52,24 @@ export default function Main(props) {
          <Switch>
            <Route path={`/`} component={()=><Dashboard/>}/>
          </Switch>
+
+        <Grid
+          container
+          direction="row"
+          justify="space-between"
+          alignItems="flex-end"
+        >
+          <Grid item>
+            <Typography variant="body2" align="right" gutterBottom>
+            Source: <b>WHO</b>
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="subtitle1" align="right" gutterBottom>
+              <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "6vmin"}} src={logo} alt="all-logo"/>
+            </Typography>
+          </Grid>
+        </Grid>
       </Container>
     </div>
   );

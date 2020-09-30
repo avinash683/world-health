@@ -48,24 +48,23 @@ export default function Main(props) {
   return (
     <div className={classes.root} >
       {/*<CssBaseline/>*/}
-      <Container maxWidth="sm" className={`${classes.root}`} id="example1">
+      <Container maxWidth="sm"className={classes.root} id="example1">
          <Switch>
            <Route path={`/`} component={()=><Dashboard/>}/>
          </Switch>
-
         <Grid
           container
           direction="row"
           justify="space-between"
           alignItems="flex-end"
         >
-          <Grid item>
-            <Typography variant="body2" align="right" gutterBottom>
-            Source: <b>WHO</b>
+          <Grid item xs={3} md={4} align="left">
+            <Typography variant="caption" align="right" gutterBottom style={{color:"gray"}}>
+            Source: WHO
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant="subtitle1" align="right" gutterBottom>
+          <Grid item xs={9} md={8} align="right">
+            <Typography variant="subtitle2" align="right" gutterBottom>
               <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "6vmin"}} src={logo} alt="all-logo"/>
             </Typography>
           </Grid>

@@ -48,12 +48,12 @@ function SubmitMessage(props) {
             <Typography variant="h5">
               <b>in taking the <span className='bold-text'>pledge</span> to have</b>
           </Typography>
-            <Typography variant="h4" style={{color:' #57af39'}}>
+            <Typography variant="h4" style={{color:' #245d2b'}}>
               <b>Mental Health for All</b>
           </Typography>
          </Box>
        <Typography variant="subtitle1" align="right" gutterBottom>
-          <b> A public awarness initiative by</b> &nbsp;&nbsp;<img style={{width: "6vmin"}} src={logo} alt="all-logo"/>
+          <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "7vmin"}} src={logo} alt="all-logo"/>
        </Typography>
       </span>
   </div>

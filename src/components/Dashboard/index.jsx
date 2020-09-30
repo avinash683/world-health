@@ -38,7 +38,7 @@ function Dashboard(props) {
   const information = [{
     logo: firstIcon,
     description: <Typography variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
-      <b><span className='bold-text'>1 in 4</span> suffers from mental illness accross the globe today
+      <b><span className='bold-text'>1 in 4</span> suffers from mental illness across the globe today
       </b>
     </Typography>
   }, {
@@ -78,7 +78,7 @@ function Dashboard(props) {
             </Slide>
           })}
           <Container maxWidth="sm">
-              <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}><b>On this occasion of</b></Typography>
+              <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}><b>On the occasion of</b></Typography>
               <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'} align="center">
                 <img className={classes.mainLogo} src={mainLogo} alt="main-logo"/>
               </Typography>
@@ -93,7 +93,7 @@ function Dashboard(props) {
             }
           </Container>
           <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'subtitle1'} align="right" gutterBottom style={{cursor : "pointer"}}>
-            <b> A public awarness initiative by</b> &nbsp;&nbsp;<img style={{width: "5vmin"}} src={logo} alt="all-logo"/>
+            <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "7vmin"}} src={logo} alt="all-logo"/>
           </Typography>
         </div>
       </div>

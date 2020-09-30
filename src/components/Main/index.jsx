@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import {Switch, Route, Redirect, useHistory} from 'react-router-dom';
 import Dashboard from "../Dashboard";
@@ -45,7 +44,7 @@ export default function Main(props) {
   return (
     <div className={classes.root} >
       {/*<CssBaseline/>*/}
-      <Container maxWidth="md" className={`${classes.root}`} id="example1">
+      <Container maxWidth="sm" className={`${classes.root}`} id="example1">
          <Switch>
            <Route path={`/`} component={()=><Dashboard/>}/>
          </Switch>

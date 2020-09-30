@@ -8,17 +8,13 @@ import Typography from "@material-ui/core/Typography";
 import mainLogo from '../../assets/Mental Health For All LOGO.png';
 import allLogo from '../../assets/Mental Health For All.png';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import axios from "axios";
 import SubmitMessage from "./SubmitMessage";
 import Slide from "react-reveal";
 import clickLogo from "../../assets/Click Pedge.png";
 import Container from "@material-ui/core/Container";
-import Fab from "@material-ui/core/Fab";
-import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
 import withWidth from '@material-ui/core/withWidth';
 import logo from "../../assets/Sun Pharma Logo.png";
 import {isWidthDown, isWidthUp} from "@material-ui/core";
-import green from "@material-ui/core/colors/green";
 
 const useStyles = makeStyles((theme) => ({
   mainLogo : {
@@ -38,25 +34,25 @@ function Dashboard(props) {
   const information = [{
     logo: firstIcon,
     description: <Typography variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
-      <b><span className='bold-text'>1 in 4</span> suffers from mental illness across the globe today
+      <b><span className='bold-text'>1 in 4 </span>people suffers from mental illness across the Globe!
       </b>
     </Typography>
   }, {
     logo: secondIcon,
     description: <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
-      <b>Due to mental illness every <span className='bold-text'>40 seconds</span> a person suicides</b>
+      <b>Due to mental illness, every <span className='bold-text'>40 seconds</span> a person suicides!</b>
     </Typography>
   }, {
     logo: thirdIcon,
     description: <Typography variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
-      <b><span className='bold-text'>COVID-19</span> pandemic has a further impact on people's mental health</b>
+      <b><span className='bold-text'>COVID-19</span> pandemic has a further impact on people's mental health!</b>
     </Typography>
   }, {
     logo: fourthIcon,
     description:
       <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}>
         <b><span className='bold-text'>75%</span> of people with mental, neurological and substance use disorders receive
-          no treatment for their condition at all</b>
+          no treatment for their condition at all!</b>
       </Typography>
   }]
 
@@ -77,13 +73,13 @@ function Dashboard(props) {
               </Box>
             </Slide>
           })}
-          <Container maxWidth="sm">
-              <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}><b>On the occasion of</b></Typography>
-              <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'} align="center">
+          <Container className="App" maxWidth="xs">
+            <Typography align="left"  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}><b>On this World Mental Health Day, let us pledge to ensure...</b></Typography>
+            <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'} align="center">
                 <img className={classes.mainLogo} src={mainLogo} alt="main-logo"/>
               </Typography>
              <Typography variant="h6">
-                 <img className={classes.mainLogo} src={allLogo} alt="all-logo"/>
+                 <img style={{width:"80%"}}  src={allLogo} alt="all-logo"/>
              </Typography>
              <br/>
             {!showPledge &&
@@ -93,7 +89,7 @@ function Dashboard(props) {
             }
           </Container>
           <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'subtitle1'} align="right" gutterBottom style={{cursor : "pointer"}}>
-            <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "7vmin"}} src={logo} alt="all-logo"/>
+            <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "5vmin"}} src={logo} alt="all-logo"/>
           </Typography>
         </div>
       </div>

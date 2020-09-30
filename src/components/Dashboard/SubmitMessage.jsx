@@ -53,7 +53,7 @@ function SubmitMessage(props) {
           </Typography>
          </Box>
        <Typography variant="subtitle1" align="right" gutterBottom>
-          <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "7vmin"}} src={logo} alt="all-logo"/>
+          <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "5vmin"}} src={logo} alt="all-logo"/>
        </Typography>
       </span>
   </div>

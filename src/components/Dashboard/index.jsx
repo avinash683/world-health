@@ -5,7 +5,6 @@ import secondIcon from "../../assets/Icon 2.png";
 import thirdIcon from "../../assets/Icon 3.png";
 import fourthIcon from "../../assets/Icon 4.png";
 import Typography from "@material-ui/core/Typography";
-import mainLogo from '../../assets/Mental Health For All LOGO.png';
 import allLogo from '../../assets/Mental Health For All.png';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import SubmitMessage from "./SubmitMessage";
@@ -16,16 +15,25 @@ import withWidth from '@material-ui/core/withWidth';
 import logo from "../../assets/Sun Pharma Logo.png";
 import {isWidthDown, isWidthUp} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-
+import mainLogo from '../../assets/19-0919 World Mental health day Pledge card__Sanket.png'
 const useStyles = makeStyles((theme) => ({
   mainLogo : {
     [theme.breakpoints.up('sm')]: {
+      width:"80%"
+    },
+    [theme.breakpoints.down('sm')]: {
       width:"70%"
+    },
+  },
+  click:{
+    [theme.breakpoints.up('sm')]: {
+      width:"60%"
     },
     [theme.breakpoints.down('sm')]: {
       width:"50%"
     },
   }
+
 }));
 
 
@@ -85,7 +93,7 @@ function Dashboard(props) {
              <br/>
             {!showPledge &&
             <Typography style={{cursor:"pointer"}} variant="h6" align="left" onClick={() => setShowPledge(true)}>
-              <img className={classes.mainLogo} src={clickLogo} alt="all-logo"/>
+              <img className={classes.click} src={clickLogo} alt="all-logo"/>
             </Typography>
             }
           </Container>

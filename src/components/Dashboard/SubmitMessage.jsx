@@ -7,6 +7,8 @@ import Jump from 'react-reveal/Jump';
 import {isWidthDown} from "@material-ui/core";
 import withWidth from "@material-ui/core/withWidth";
 import axios from "axios";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 function SubmitMessage(props) {
   const [count, setCount] = useState(0);
 
@@ -51,6 +53,9 @@ function SubmitMessage(props) {
               <b>Mental Health for All</b>
           </Typography>
          </Box>
+      <Typography variant="subtitle2" align="center" gutterBottom>
+          <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "6vmin"}} src={logo} alt="all-logo"/>
+      </Typography>
   </div>
 }
 

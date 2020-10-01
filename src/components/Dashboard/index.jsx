@@ -15,6 +15,7 @@ import Container from "@material-ui/core/Container";
 import withWidth from '@material-ui/core/withWidth';
 import logo from "../../assets/Sun Pharma Logo.png";
 import {isWidthDown, isWidthUp} from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   mainLogo : {
@@ -74,7 +75,7 @@ function Dashboard(props) {
             </Slide>
           })}
           <Container className="App" maxWidth="xs">
-            <Typography align="left"  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}><b>On this World Mental Health Day, let us pledge to ensure...</b></Typography>
+            <Typography align="center"  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'}><b>On this</b></Typography>
             <Typography  variant={isWidthDown('xs', props.width) ? 'subtitle2' : 'h6'} align="center">
                 <img className={classes.mainLogo} src={mainLogo} alt="main-logo"/>
               </Typography>
@@ -88,6 +89,23 @@ function Dashboard(props) {
             </Typography>
             }
           </Container>
+          <Grid
+              container
+              direction="row"
+              justify="space-between"
+              alignItems="flex-end"
+          >
+            <Grid item xs={3} md={4} align="left">
+              <Typography variant="caption" align="right" gutterBottom style={{color:"gray"}}>
+                Source: WHO
+              </Typography>
+            </Grid>
+            <Grid item xs={9} md={8} align="right">
+              <Typography variant="subtitle2" align="right" gutterBottom>
+                <b> A public awareness initiative by</b> &nbsp;&nbsp;<img style={{width: "6vmin"}} src={logo} alt="all-logo"/>
+              </Typography>
+            </Grid>
+          </Grid>
         </div>
       </div>
       : <SubmitMessage/>}

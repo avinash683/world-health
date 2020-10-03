@@ -39,7 +39,7 @@ function SubmitMessage(props) {
       </Box>
         <br/>
       <Typography variant="h6">
-          <img style={{width : "50%"}} src={thankyouLogo} alt="main-logo"/>
+          <img style={{width : "90%"}} src={thankyouLogo} alt="main-logo"/>
         </Typography>
         <br/>
          <Box display="grid" justifyContent="center" m={1} p={1}>
